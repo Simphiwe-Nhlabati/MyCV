@@ -29,7 +29,6 @@ Focused on full-stack development, backend services, and collaborative software 
 Here are a few of the projects I’ve built:
 1. **E-Commerce Platform** — Full-stack Django app with user authentication, cart system, and vendor management.
 2. **Hyper News** — A news platform with journalist subscriptions, REST APIs, and social media integration.
-3. **Hotel Booking System** — Room availability calendar, automated checkout, and booking management.
 
 ---
 
@@ -37,14 +36,11 @@ Here are a few of the projects I’ve built:
 - **Email:** [thomasnhlabati770@gmail.com](mailto:thomasnhlabati770@gmail.com)  
 - **Phone:** 066 216 3533  
 - **GitHub:** [github.com/Simphiwe-Nhlabati](https://github.com/Simphiwe-Nhlabati)  
-- **LinkedIn:** *(Add your LinkedIn link here)*  
+- **LinkedIn:** [*(Add your LinkedIn link here)* ](https://www.linkedin.com/in/simphiwe-nhlabati-691106327/) 
 
 ---
 
-## 📥 How to View My CV
-You can view or download my CV directly from this repository:
-1. Click on the **CV.pdf** file above.
-2. Click the **Download** button in the top-right corner.
+
 
 ---
 
