@@ -36,7 +36,7 @@ Here are a few of the projects I’ve built:
 - **Email:** [thomasnhlabati770@gmail.com](mailto:thomasnhlabati770@gmail.com)  
 - **Phone:** 066 216 3533  
 - **GitHub:** [github.com/Simphiwe-Nhlabati](https://github.com/Simphiwe-Nhlabati)  
-- **LinkedIn:** [*(Add your LinkedIn link here)* ](https://www.linkedin.com/in/simphiwe-nhlabati-691106327/) 
+- **LinkedIn:** [*(Simphiwe Nhlabati)* ](https://www.linkedin.com/in/simphiwe-nhlabati-691106327/) 
 
 ---
 
