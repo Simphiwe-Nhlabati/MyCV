@@ -3,153 +3,604 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Simphiwe Nhlabati</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <title>Python Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
-        header {
-            background: linear-gradient(135deg, #0d6efd, #004085);
-            color: white;
-            padding: 50px 0;
-            text-align: center;
+        .floating {
+            animation: float 3s ease-in-out infinite;
         }
-        header h1 {
-            font-weight: bold;
+        .nav-link {
+            position: relative;
         }
-        header p {
-            font-size: 1.2rem;
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0ea5e9;
+            transition: width 0.3s ease;
         }
-        .section-title {
-            border-left: 4px solid #0d6efd;
-            padding-left: 10px;
-            margin-bottom: 20px;
-            font-weight: bold;
+        .nav-link:hover::after {
+            width: 100%;
         }
-        .card {
-            border: none;
-            background-color: white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        .project-link {
-            text-decoration: none;
-            color: #0d6efd;
-        }
-        .project-link:hover {
-            text-decoration: underline;
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
     </style>
 </head>
-<body>
-
-    
-    <header>
-        <h1>Simphiwe Nhlabati</h1>
-        <p>Junior Software Engineer | Python & Django Developer</p>
-    </header>
-
-    <main class="container py-5">
-
-        
-        <div class="card p-4 mb-4">
-            <h2 class="section-title">About Me</h2>
-            <p>Recent graduate of a rigorous software engineering bootcamp with a strong foundation in 
-                <strong>Python, Django, Docker, SQL/SQLite, HTML, CSS, Bootstrap, Sphinx, and Git</strong>. 
-                Adept at creating and deploying web applications, with a focus on clean and efficient code. 
-                Eager to contribute technical skills and passion for problem-solving to a dynamic software development team.</p>
-        </div>
-
-        <div class="card p-4 mb-4">
-            <h2 class="section-title">Contact Information</h2>
-            <div class="contact-info">
-                <p><strong>Name:</strong> Simphiwe Nhlabati</p>
-                <p><strong>Phone:</strong> 066 216 3533</p>
-                <p><strong>Email:</strong> <a href="mailto:thomasnhlabati770@gmail.com">thomasnhlabati770@gmail.com</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/Simphiwe-Nhlabati" target="_blank">github.com/Simphiwe-Nhlabati</a></p>
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fab fa-python text-primary-500 text-3xl mr-2"></i>
+                        <span class="text-xl font-bold text-primary-700">PyDev</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#home" class="nav-link text-gray-900 hover:text-primary-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-900 hover:text-primary-600 px-3 py-2 text-sm font-medium">About</a>
+                    <a href="#skills" class="nav-link text-gray-900 hover:text-primary-600 px-3 py-2 text-sm font-medium">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-900 hover:text-primary-600 px-3 py-2 text-sm font-medium">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-900 hover:text-primary-600 px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
         </div>
-
         
-        <div class="card p-4 mb-4">
-            <h2 class="section-title">Technical Experience</h2>
-            <p><strong>HyperionDev — Software Engineering Bootcamp</strong> <span class="text-muted">(03/2025 - 07/2025)</span></p>
-            <ul>
-                <li>Achieved an overall average of <strong>99%</strong> for bootcamp tasks.</li>
-                <li>Became proficient in Python within four months, enhancing coding efficiency.</li>
-                <li>Gained hands-on experience with Django and Django REST Framework.</li>
-                <li>Completed five practical tasks, focusing on real-world applications.</li>
-            </ul>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-primary-600 hover:bg-gray-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-primary-600 hover:bg-gray-50">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-primary-600 hover:bg-gray-50">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-primary-600 hover:bg-gray-50">Projects</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-primary-600 hover:bg-gray-50">Contact</a>
+            </div>
         </div>
+    </nav>
 
-        
-        <div class="card p-4 mb-4">
-            <h2 class="section-title">Projects</h2>
-
-            <h5>E-commerce Platform</h5>
-            <ul>
-                <li>Developed models for products, users, orders, and carts using Django ORM with role-based access for vendors and buyers.</li>
-                <li>Built views and templates for seamless frontend-backend integration using Django's MVT architecture.</li>
-                <li>Added cart logic with dynamic price calculation and order confirmation functionality. 
-                    <a class="project-link" href="https://github.com/Simphiwe-Nhlabati/Ecom">View Project</a>
-                </li>
-            </ul>
-
-            <h5>News Application Platform</h5>
-            <ul>
-                <li>Built custom user roles (Journalist, Editor, Reader) with permission-based article access and approval workflow.</li>
-                <li>Integrated Django REST Framework to expose API endpoints for articles and user subscriptions.</li>
-                <li>Implemented secure login system, article creation, and comment system using MariaDB as the backend. 
-                    <a class="project-link" href="https://github.com/Simphiwe-Nhlabati/Django-Caps">View Project</a>
-                </li>
-            </ul>
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-12 md:pt-32 md:pb-20 bg-gradient-to-b from-primary-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+                    <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                        <span class="block">Hi, I'm</span>
+                        <span class="block text-primary-600"> Simphiwe Nhlabati</span>
+                    </h1>
+                    <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        Junior Python Developer from South Africa specializing in web applications with Django. Passionate about building clean, efficient solutions.
+                    </p>
+                    <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                            <a href="#contact" class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 md:py-4 md:text-lg md:px-10 transition duration-300">
+                                Contact Me
+                            </a>
+                            <a href="#projects" class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary-700 bg-primary-100 hover:bg-primary-200 md:py-4 md:text-lg md:px-10 transition duration-300">
+                                View Projects
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
+                    <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md floating">
+                        <div class="bg-primary-500 rounded-lg p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="h-3 w-3 rounded-full bg-red-500 mr-2"></div>
+                                <div class="h-3 w-3 rounded-full bg-yellow-500 mr-2"></div>
+                                <div class="h-3 w-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="bg-gray-900 rounded p-4 text-green-400 font-mono text-sm h-64 overflow-y-auto">
+                                <span class="text-gray-400"># Python Developer Portfolio</span><br><br>
+                                <span class="text-purple-400">class</span> <span class="text-blue-400">Portfolio</span>:<br>
+                                &nbsp;&nbsp;<span class="text-purple-400">def</span> <span class="text-yellow-400">__init__</span>(<span class="text-green-400">self</span>):<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">self</span>.skills = [<span class="text-yellow-400">"Python"</span>, <span class="text-yellow-400">"Django"</span>, <span class="text-yellow-400">"Flask"</span>]<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">self</span>.projects = <span class="text-purple-400">None</span><br><br>
+                                &nbsp;&nbsp;<span class="text-purple-400">def</span> <span class="text-yellow-400">build_projects</span>(<span class="text-green-400">self</span>):<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">return</span> <span class="text-yellow-400">"Amazing Python Apps"</span><br><br>
+                                <span class="text-gray-400"># Create my portfolio</span><br>
+                                me = <span class="text-blue-400">Portfolio</span>()<br>
+                                me.build_projects()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        
-        <div class="card p-4 mb-4">
-            <h2 class="section-title">Accomplishments</h2>
-            <ul>
-                <li>Developed a personal portfolio website using HTML, CSS, and Bootstrap to showcase projects.</li>
-                <li>Integrated SQL/SQLite for efficient data retrieval, improving performance by 25% in one project.</li>
-            </ul>
+    <!-- About Section -->
+    <section id="about" class="py-12 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">About Me</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Who I Am
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    A passionate Python developer with expertise in building robust applications.
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+                    <div class="relative">
+                        <div class="relative overflow-hidden rounded-lg shadow-lg h-64">
+                            <img class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Python code on screen">
+                            <div class="absolute inset-0 bg-primary-500 opacity-30"></div>
+                        </div>
+                        <div class="mt-6 flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Developer profile">
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Alex Python</h3>
+                                <p class="text-primary-600">Python Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10 lg:mt-0">
+                        <p class="text-lg text-gray-500">
+                            As a junior Python developer from South Africa, I specialize in building web applications with Django and Django REST Framework. I'm passionate about clean code, best practices, and creating solutions that make an impact. My experience includes building a news aggregator and e-commerce platform from scratch.
+                        </p>
+                        <div class="mt-8">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-primary-50 rounded-md p-2">
+                                    <i class="fas fa-code text-primary-600 h-6 w-6"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Clean Code</h3>
+                                    <p class="mt-1 text-gray-500">
+                                        I follow best practices to write clean, maintainable code that's easy to understand and extend.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex items-start">
+                                <div class="flex-shrink-0 bg-primary-50 rounded-md p-2">
+                                    <i class="fas fa-lightbulb text-primary-600 h-6 w-6"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Problem Solving</h3>
+                                    <p class="mt-1 text-gray-500">
+                                        I enjoy tackling complex challenges and finding elegant solutions that balance performance and readability.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex items-start">
+                                <div class="flex-shrink-0 bg-primary-50 rounded-md p-2">
+                                    <i class="fas fa-users text-primary-600 h-6 w-6"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Collaboration</h3>
+                                    <p class="mt-1 text-gray-500">
+                                        I believe in the power of teamwork and enjoy collaborating with others to build something great.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        
-        <div class="card p-4 mb-4">
-            <h2 class="section-title">Technical Skills</h2>
-            <p><strong>Languages & Frameworks:</strong> Python, Django, Django REST Framework</p>
-            <p><strong>Databases:</strong> MariaDB, SQL, SQLite</p>
-            <p><strong>Tools:</strong> Docker, Git, Bootstrap, Sphinx</p>
+    <!-- Skills Section -->
+    <section id="skills" class="py-12 md:py-20 bg-primary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Skills</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    My Technical Skills
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Here are the technologies I work with on a daily basis.
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
+                    <!-- Python -->
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8 h-full shadow-sm hover:shadow-md transition duration-300">
+                            <div class="-mt-6">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white mx-auto">
+                                    <i class="fab fa-python text-xl"></i>
+                                </div>
+                                <h3 class="mt-4 text-lg font-medium text-gray-900 text-center">Python</h3>
+                                <div class="mt-4 flex justify-center">
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-primary-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <p class="mt-2 text-sm text-gray-500 text-center">
+                                    Core language proficiency
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Django -->
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8 h-full shadow-sm hover:shadow-md transition duration-300">
+                            <div class="-mt-6">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white mx-auto">
+                                    <i class="fab fa-python text-xl"></i>
+                                </div>
+                                <h3 class="mt-4 text-lg font-medium text-gray-900 text-center">Django</h3>
+                                <div class="mt-4 flex justify-center">
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-green-600 h-2.5 rounded-full" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <p class="mt-2 text-sm text-gray-500 text-center">
+                                    Web framework expertise
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Django REST -->
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8 h-full shadow-sm hover:shadow-md transition duration-300">
+                            <div class="-mt-6">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white mx-auto">
+                                    <i class="fas fa-server text-xl"></i>
+                                </div>
+                                <h3 class="mt-4 text-lg font-medium text-gray-900 text-center">Django REST</h3>
+                                <div class="mt-4 flex justify-center">
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-red-600 h-2.5 rounded-full" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <p class="mt-2 text-sm text-gray-500 text-center">
+                                    API development
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Django -->
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8 h-full shadow-sm hover:shadow-md transition duration-300">
+                            <div class="-mt-6">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white mx-auto">
+                                    <i class="fab fa-python text-xl"></i>
+                                </div>
+                                <h3 class="mt-4 text-lg font-medium text-gray-900 text-center">Django</h3>
+                                <div class="mt-4 flex justify-center">
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-green-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <p class="mt-2 text-sm text-gray-500 text-center">
+                                    Full-stack web development
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PostgreSQL -->
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8 h-full shadow-sm hover:shadow-md transition duration-300">
+                            <div class="-mt-6">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white mx-auto">
+                                    <i class="fas fa-database text-xl"></i>
+                                </div>
+                                <h3 class="mt-4 text-lg font-medium text-gray-900 text-center">PostgreSQL</h3>
+                                <div class="mt-4 flex justify-center">
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <p class="mt-2 text-sm text-gray-500 text-center">
+                                    Database design & optimization
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Docker -->
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8 h-full shadow-sm hover:shadow-md transition duration-300">
+                            <div class="-mt-6">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-400 text-white mx-auto">
+                                    <i class="fab fa-docker text-xl"></i>
+                                </div>
+                                <h3 class="mt-4 text-lg font-medium text-gray-900 text-center">Docker</h3>
+                                <div class="mt-4 flex justify-center">
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-blue-500 h-2.5 rounded-full" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <p class="mt-2 text-sm text-gray-500 text-center">
+                                    Containerization & deployment
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Git -->
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8 h-full shadow-sm hover:shadow-md transition duration-300">
+                            <div class="-mt-6">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-600 text-white mx-auto">
+                                    <i class="fab fa-git-alt text-xl"></i>
+                                </div>
+                                <h3 class="mt-4 text-lg font-medium text-gray-900 text-center">Git</h3>
+                                <div class="mt-4 flex justify-center">
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-orange-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <p class="mt-2 text-sm text-gray-500 text-center">
+                                    Version control & collaboration
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        
-        <div class="card p-4 mb-4">
-            <h2 class="section-title">Soft Skills</h2>
-            <ul>
-                <li>Collaboration</li>
-                <li>Problem Solving</li>
-                <li>Accountability</li>
-                <li>Communication</li>
-                <li>Analytical Skills</li>
-                <li>Adaptability</li>
-            </ul>
+    <!-- Projects Section -->
+    <section id="projects" class="py-12 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Projects</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    My Recent Work
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Here are some of my favorite projects I've worked on.
+                </p>
+            </div>
+
+            <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- News App -->
+                <div class="project-card flex flex-col rounded-lg shadow-lg overflow-hidden transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex-shrink-0">
+                        <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1585829365295-ab7cd4001657?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="News application">
+                    </div>
+                    <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-primary-600">
+                                Web Application
+                            </p>
+                            <a href="#" class="block mt-2">
+                                <h3 class="text-xl font-semibold text-gray-900">News Aggregator</h3>
+                                <p class="mt-3 text-base text-gray-500">
+                                    A Django-based news application with user authentication, article categorization, and commenting system.
+                                </p>
+                            </a>
+                        </div>
+                        <div class="mt-6 flex items-center">
+                            <div class="flex-shrink-0">
+                                <i class="fab fa-python text-primary-500"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">
+                                    Django, PostgreSQL, Bootstrap
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-commerce App -->
+                <div class="project-card flex flex-col rounded-lg shadow-lg overflow-hidden transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex-shrink-0">
+                        <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="E-commerce application">
+                    </div>
+                    <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-primary-600">
+                                Full-stack Application
+                            </p>
+                            <a href="#" class="block mt-2">
+                                <h3 class="text-xl font-semibold text-gray-900">E-commerce Platform</h3>
+                                <p class="mt-3 text-base text-gray-500">
+                                    Complete online store with product management, shopping cart, and payment processing.
+                                </p>
+                            </a>
+                        </div>
+                        <div class="mt-6 flex items-center">
+                            <div class="flex-shrink-0">
+                                <i class="fab fa-python text-primary-500"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">
+                                    Django, DRF, Docker, Stripe
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
         </div>
+    </section>
 
-        
-        <div class="card p-4">
-            <h2 class="section-title">Education</h2>
-            <p><strong>HyperionDev — Software Engineering Bootcamp</strong> <span class="text-muted">(03/2025 - 07/2025)</span></p>
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 md:py-20 bg-primary-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-primary-200 font-semibold tracking-wide uppercase">Contact</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+                    Get In Touch
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-primary-100 lg:mx-auto">
+                    I'm currently available for freelance work or full-time positions.
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                        <div class="px-6 py-8 sm:p-10">
+                            <h3 class="text-lg font-medium text-gray-900">Send me a message</h3>
+                            <form class="mt-6 space-y-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                                    <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                    <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                                    <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500"></textarea>
+                                </div>
+                                <div>
+                                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition duration-300">
+                                        Send Message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                            <div class="px-6 py-8 sm:p-10">
+                                <h3 class="text-lg font-medium text-gray-900">Contact Information</h3>
+                                <div class="mt-6 space-y-4">
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-envelope text-primary-500"></i>
+                                        </div>
+                                        <div class="ml-3 text-base text-gray-500">
+                                            <p>thomasnhlabati770@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-phone-alt text-primary-500"></i>
+                                        </div>
+                                        <div class="ml-3 text-base text-gray-500">
+                                            <p>0662163533</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-map-marker-alt text-primary-500"></i>
+                                        </div>
+                                        <div class="ml-3 text-base text-gray-500">
+                                            <p>South Africa, Gauteng</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                            <div class="px-6 py-8 sm:p-10">
+                                <h3 class="text-lg font-medium text-gray-900">Follow Me</h3>
+                                <div class="mt-6 flex space-x-6">
+                                    <a href="https://github.com/Simphiwe-Nhlabati" class="text-gray-400 hover:text-primary-500 transition duration-300">
+                                        <i class="fab fa-github text-2xl"></i>
+                                        <span class="sr-only">GitHub</span>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/simphiwe-nhlabati-691106327/" class="text-gray-400 hover:text-primary-500 transition duration-300">
+                                        <i class="fab fa-linkedin text-2xl"></i>
+                                        <span class="sr-only">LinkedIn</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-    </main>
-
-    <footer class="bg-light text-center py-3 mt-5 border-top">
-        <p class="mb-0">&copy; 2025 Simphiwe Nhlabati — All Rights Reserved</p>
+    <!-- Footer -->
+    <footer class="bg-gray-900">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center justify-between md:flex-row">
+                <div class="flex items-center">
+                    <i class="fab fa-python text-primary-500 text-3xl mr-2"></i>
+                    <span class="text-xl font-bold text-white">PyDev</span>
+                </div>
+                <div class="mt-8 md:mt-0">
+                    <p class="text-center text-base text-gray-400 md:text-right">
+                        &copy; 2023 Python Developer Portfolio. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.add('hidden');
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
 
